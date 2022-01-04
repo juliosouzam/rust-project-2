@@ -69,6 +69,7 @@ impl Records {
 fn save_records(file_name: PathBuf, records: Records) -> std::io::Result<()> {
     let mut file = OpenOptions::new()
         .write(true)
+        .create(true)
         .truncate(true)
         .open(file_name)?;
 
